@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tensorfold-arm"
+version = "0.1.0"
+description = "Arm-focused neural network optimization using low-rank decomposition"
+requires-python = ">=3.10"
+dependencies = [
+    "torch"
+]
+
+[tool.setuptools.packages.find]
+include = ["tensorfold*"]
