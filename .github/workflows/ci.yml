@@ -35,4 +35,4 @@ jobs:
 
       - name: Run Basic Compression Example
         run: |
-          python examples/basic_compression.py
+          python examples/basic_tensorfold.py
