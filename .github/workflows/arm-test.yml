@@ -1,0 +1,42 @@
+name: ARM64 Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  arm64:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check architecture
+        run: |
+          uname -m
+          lscpu | grep -E "Architecture|Model name|CPU\(s\)"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify ARM64
+        run: |
+          python -c "import platform; print('Architecture:', platform.machine())"
+
+      - name: Test TensorFold
+        run: |
+          python -c "import tensorfold; print('TensorFold import OK')"
+
+      - name: Run benchmark
+        run: |
+          python examples/benchmark_tensorfold.py
