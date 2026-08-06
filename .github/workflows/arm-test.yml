@@ -29,13 +29,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install TensorFold
+        run: |
+          pip install -e .
+
       - name: Verify ARM64
         run: |
           python -c "import platform; print('Architecture:', platform.machine())"
 
-      - name: Test TensorFold
+      - name: Verify TensorFold
         run: |
           python -c "import tensorfold; print('TensorFold import OK')"
+          python -c "import tensorfold; print(tensorfold.__file__)"
 
       - name: Run benchmark
         run: |
