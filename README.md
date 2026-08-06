@@ -168,7 +168,7 @@ Benchmark configuration
 # Installation
 
 ```bash
-git clone https://github.com/<your-username>/TensorFold-arm.git
+git clone https://github.com/mridul-afk/TensorFold-arm.git
 
 cd TensorFold-arm
 
@@ -243,11 +243,11 @@ tests/
 
 # Roadmap
 
-- [x] Low-rank Linear layer
-- [x] Automatic model compression
-- [x] Energy-based rank selection
-- [x] Accuracy evaluation
-- [x] CPU benchmarking
+- [ ] Low-rank Linear layer
+- [ ] Automatic model compression
+- [ ] Energy-based rank selection
+- [ ] Accuracy evaluation
+- [ ] CPU benchmarking
 - [ ] Native Arm benchmarking
 - [ ] Automatic latency-aware rank selection
 - [ ] Support for larger transformer models
